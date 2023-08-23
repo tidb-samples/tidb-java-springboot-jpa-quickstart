@@ -1,0 +1,124 @@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2023-08-23T17:29:25.556+08:00  INFO 25124 --- [           main] com.pingcap.App                          : Starting App v0.0.1 using Java 17.0.2 with PID 25124 (/Users/cheese/IdeaProjects/tidb-java-springboot-jpa-quickstart/target/spring-jpa-hibernate-0.0.1.jar started by cheese in /Users/cheese/IdeaProjects/tidb-java-springboot-jpa-quickstart)
+2023-08-23T17:29:25.557+08:00  INFO 25124 --- [           main] com.pingcap.App                          : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T17:29:25.877+08:00  INFO 25124 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T17:29:25.909+08:00  INFO 25124 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interfaces.
+2023-08-23T17:29:26.181+08:00  INFO 25124 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T17:29:26.185+08:00  INFO 25124 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T17:29:26.186+08:00  INFO 25124 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-08-23T17:29:26.229+08:00  INFO 25124 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T17:29:26.230+08:00  INFO 25124 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 646 ms
+2023-08-23T17:29:26.308+08:00  INFO 25124 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T17:29:26.333+08:00  INFO 25124 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-08-23T17:29:26.404+08:00  WARN 25124 --- [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-08-23T17:29:26.452+08:00  INFO 25124 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T17:29:29.443+08:00  INFO 25124 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b2a3ff8
+2023-08-23T17:29:29.446+08:00  INFO 25124 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T17:29:29.693+08:00  INFO 25124 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.TiDBDialect
+Hibernate: drop table if exists player_jpa
+Hibernate: drop sequence player_jpa_id_seq
+2023-08-23T17:29:31.080+08:00  WARN 25124 --- [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "drop sequence player_jpa_id_seq" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "drop sequence player_jpa_id_seq" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:419) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:403) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:286) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:178) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:149) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:117) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:242) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:336) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1425) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.3.jar!/:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.3.jar!/:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.3.jar!/:6.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.3.jar!/:6.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1797) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1747) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.3.jar!/:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130) ~[spring-context-6.0.3.jar!/:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905) ~[spring-context-6.0.3.jar!/:6.0.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.3.jar!/:6.0.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.1.jar!/:3.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.1.jar!/:3.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.1.jar!/:3.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.1.jar!/:3.0.1]
+	at com.pingcap.App.main(App.java:27) ~[classes!/:0.0.1]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[spring-jpa-hibernate-0.0.1.jar:0.0.1]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:95) ~[spring-jpa-hibernate-0.0.1.jar:0.0.1]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[spring-jpa-hibernate-0.0.1.jar:0.0.1]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65) ~[spring-jpa-hibernate-0.0.1.jar:0.0.1]
+Caused by: java.sql.SQLException: Unknown SEQUENCE: 'test.player_jpa_id_seq'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar!/:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.1.6.Final.jar!/:6.1.6.Final]
+	... 42 common frames omitted
+
+Hibernate: create sequence player_jpa_id_seq start with 1 increment by 1
+Hibernate: create table player_jpa (id bigint not null, coins integer, goods integer, primary key (id)) engine=InnoDB
+2023-08-23T17:29:32.174+08:00  INFO 25124 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T17:29:32.183+08:00  INFO 25124 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T17:29:32.495+08:00  WARN 25124 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T17:29:32.680+08:00  INFO 25124 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T17:29:32.688+08:00  INFO 25124 --- [           main] com.pingcap.App                          : Started App in 7.346 seconds (process running for 7.554)
+2023-08-23T17:30:26.327+08:00  INFO 25124 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T17:30:26.328+08:00  INFO 25124 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T17:30:26.330+08:00  INFO 25124 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-23T17:30:26.426+08:00  WARN 25124 --- [nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7b2a3ff8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2023-08-23T17:30:26.427+08:00  WARN 25124 --- [nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@14c52563 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2023-08-23T17:30:26.428+08:00  WARN 25124 --- [nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d7c89fc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select nextval(player_jpa_id_seq)
+Hibernate: insert into player_jpa (coins, goods, id) values (?, ?, ?)
+Hibernate: select p1_0.id,p1_0.coins,p1_0.goods from player_jpa p1_0 where p1_0.id=?
+Hibernate: SELECT * FROM player_jpa LIMIT ?
+Hibernate: select p1_0.id,p1_0.coins,p1_0.goods from player_jpa p1_0 limit ?,?
+Hibernate: select count(p1_0.id) from player_jpa p1_0
+Hibernate: select count(*) from player_jpa p1_0
+Hibernate: select p1_0.id,p1_0.coins,p1_0.goods from player_jpa p1_0 where p1_0.id=? for update
+Hibernate: select p1_0.id,p1_0.coins,p1_0.goods from player_jpa p1_0 where p1_0.id=? for update
+Hibernate: update player_jpa set coins=?, goods=? where id=?
+Hibernate: update player_jpa set coins=?, goods=? where id=?
