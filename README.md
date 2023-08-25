@@ -77,7 +77,7 @@ cd tidb-java-springboot-jpa-quickstart
     cp env.sh.example env.sh
     ```
 
-3. Copy and paste the corresponding connection string into `.env`. Change the example results as follows.
+3. Copy and paste the corresponding connection string into `env.sh`. Change the example results as follows.
 
     ```shell
     export TIDB_HOST='{host}.clusters.tidb-cloud.com'
@@ -103,7 +103,7 @@ cd tidb-java-springboot-jpa-quickstart
     cp env.sh.example env.sh
     ```
 
-2. Copy and paste the corresponding connection string into `.env`. Change the example results as follows.
+2. Copy and paste the corresponding connection string into `env.sh`. Change the example results as follows.
 
     ```shell
     export TIDB_HOST='{tidb_server_host}'
