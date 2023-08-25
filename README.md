@@ -114,7 +114,7 @@ cd tidb-java-springboot-jpa-quickstart
     export USE_SSL='false'
     ```
 
-    Replace placeholders `{}` with values corresponding to your TiDB setup, and delete the `CA_PATH` line. If you are running TiDB on your local machine, the default Host address is `127.0.0.1`, and the password is empty.
+    Replace placeholders `{}` with values corresponding to your TiDB setup. If you are running TiDB on your local machine, the default Host address is `127.0.0.1`, and the password is empty.
 
 3. Save the file.
 
